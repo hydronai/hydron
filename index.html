@@ -88,7 +88,8 @@
       <div class="feature-copy">
         <span class="eyebrow">Command line</span>
         <h3>Prefer the terminal? So does Hydron.</h3>
-        <p>The installer adds the <code>hydron</code> command to your PATH, so you can manage models from any shell.</p>
+        <p>Run <code>hydron</code> in any shell for a full agent in your terminal. It starts read-only, so it can look but not change files until you switch modes, and <code>/undo</code> reverts any edit.</p>
+        <ul class="checklist"><li><code>@file</code> attaches files, <code>!</code> runs shell commands, <code>#</code> saves notes to memory</li><li>34 built-in slash commands, plus your own</li><li>Manage models with simple commands:</li></ul>
         <div class="chips" style="margin-top:1.5rem">
           <button class="chip active" data-command="hydron pull gemma3:4b">Install Gemma</button>
           <button class="chip" data-command="hydron run phi4-mini:3.8b">Run Phi</button>
@@ -97,18 +98,7 @@
         </div>
         <div class="cmd"><code id="cmd-output">hydron pull gemma3:4b</code><button class="copy-btn" data-copy="cmd-output">Copy</button></div>
       </div>
-      <div class="panel">
-        <div class="panel-head"><span>PowerShell</span><span>hydron</span></div>
-<div class="panel-body"><span class="p">PS&gt;</span> hydron list
-<span class="c">NAME              SIZE     MODIFIED</span>
-gemma3:4b         3.3 GB   2 days ago
-phi4-mini:3.8b    2.5 GB   5 days ago
-qwen3:8b          5.2 GB   1 week ago
-
-<span class="p">PS&gt;</span> hydron run gemma3:4b
-<span class="c">&gt;&gt;&gt;</span> Summarise this repository's README
-<span class="c">Loading model… ready.</span></div>
-      </div>
+      <div class="frame natural"><img src="assets/hydron-cli.png" alt="Hydron command-line agent welcome screen showing model, read-only mode, and tips" width="1430" height="927" loading="lazy"></div>
     </div>
   </div>
 </section>
