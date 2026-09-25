@@ -23,6 +23,28 @@
     a.addEventListener('click', function(){ links.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); });
   });
 
+  /* Light / dark theme toggle. The <head> script has already applied the
+     saved or system theme; this keeps the button and system changes in sync. */
+  var root = document.documentElement;
+  var themeBtn = document.getElementById('theme-toggle');
+  function applyTheme(t){
+    root.setAttribute('data-theme', t);
+    if(themeBtn) themeBtn.setAttribute('aria-label', t === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+  }
+  applyTheme(root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
+  if(themeBtn) themeBtn.addEventListener('click', function(){
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+    try{ localStorage.setItem('hydron-theme', next); }catch(e){}
+  });
+  var systemDark = window.matchMedia('(prefers-color-scheme: dark)');
+  var onSystemChange = function(e){
+    var saved = null;
+    try{ saved = localStorage.getItem('hydron-theme'); }catch(err){}
+    if(saved !== 'light' && saved !== 'dark') applyTheme(e.matches ? 'dark' : 'light');
+  };
+  if(systemDark.addEventListener) systemDark.addEventListener('change', onSystemChange);
+
   /* Gentle fade-in as sections enter the viewport. */
   var items = document.querySelectorAll('.fade');
   if(reducedMotion || !('IntersectionObserver' in window)){
