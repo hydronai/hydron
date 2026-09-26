@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hydron Synapse — Your PC’s AI on your phone</title>
+<meta name="description" content="Hydron Synapse for Android chats with the models running on your own PC over an encrypted Wi-Fi or Bluetooth link. No account, no cloud.">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b0b0d" media="(prefers-color-scheme: dark)">
+<script>(function(){var t;try{t=localStorage.getItem('hydron-theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';var d=document.documentElement;d.setAttribute('data-theme',t);d.className=d.className.replace('no-js','js')})();</script>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23111113'/%3E%3Cg fill='none' stroke='%23fff' stroke-width='3'%3E%3Cellipse cx='32' cy='32' rx='25' ry='8'/%3E%3Cellipse cx='32' cy='32' rx='25' ry='8' transform='rotate(60 32 32)'/%3E%3Cellipse cx='32' cy='32' rx='25' ry='8' transform='rotate(-60 32 32)'/%3E%3C/g%3E%3Ccircle cx='32' cy='32' r='5' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@8..144,400..600&family=Google+Sans+Code:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=d1a6afdd">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html" aria-label="Hydron home"><svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3.5"><ellipse cx="32" cy="32" rx="25" ry="8"/><ellipse cx="32" cy="32" rx="25" ry="8" transform="rotate(60 32 32)"/><ellipse cx="32" cy="32" rx="25" ry="8" transform="rotate(-60 32 32)"/></g><circle cx="32" cy="32" r="5" fill="currentColor"/></svg><span>Hydron</span></a>
+    <nav aria-label="Primary">
+      <ul class="nav-links" id="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="features.html">Features</a></li>
+<li><a class="active" aria-current="page" href="synapse.html">Synapse</a></li>
+<li><a href="install.html">Install</a></li>
+<li><a href="privacy.html">Privacy</a></li>
+<li><a href="terms.html">Terms</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark theme"><svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg><svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <a class="btn btn-primary btn-small" href="downloads/Hydron-Setup.exe">Download</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="syn-hero ring-host">
+  <canvas class="ring" data-density=".6" aria-hidden="true"></canvas>
+  <div class="container syn-hero-grid">
+    <div>
+      <span class="pill-tag">Hydron Synapse · Android</span>
+      <h1 data-typed data-typed-now data-caret-keep data-speed="55">Your PC's AI,<br><span class="soft">in your pocket.</span></h1>
+      <p class="lead">Synapse lets your phone talk to the models running in Hydron on your computer. Ask on your phone, your PC does the thinking, and the answer streams back word by word.</p>
+      <div class="actions"><a class="btn btn-primary" href="downloads/Hydron-Synapse-0.3.1.apk" download>Download for Android</a><a class="btn btn-secondary" href="#how">How it works</a></div>
+      <p class="syn-meta">v0.3.1 · APK · 17.5 MB · Needs Hydron on your Windows PC</p>
+    </div>
+    <div class="phones">
+        <div class="phone"><img src="assets/synapse-empty.jpg" alt="Synapse on Android, connected to a PC over Wi-Fi with the qwen3:0.6b model selected" width="720" height="1560"></div>
+        <div class="phone"><img src="assets/synapse-chat.jpg" alt="A Synapse conversation: the phone says Hello and the model replies" width="720" height="1560" loading="lazy"></div>
+      </div>
+  </div>
+</section>
+
+<section class="statement">
+  <div class="container">
+    <p class="statement-text" data-typed data-speed="26">The models never leave your PC. Your phone is just a window into them.</p>
+    <p class="lead" style="margin-top:1.5rem;max-width:40rem">No Hydron server sits in the middle. If your computer is off, Synapse doesn't work — and that's the point.</p>
+  </div>
+</section>
+
+<section class="section soft" id="how">
+  <div class="container">
+    <div class="section-head fade"><span class="eyebrow">How it works</span><h2>Pair once. Then just chat.</h2></div>
+    <div class="stages grid">
+      <article class="stage fade">
+        <h3>Pair</h3><p class="when">Once</p>
+        <p>In Hydron on your computer, turn on <strong>Phone pairing</strong> and press <strong>Pair a phone</strong>. Type the code it shows into Synapse. The two devices now know each other for good.</p>
+        <div class="code-demo" aria-label="Example pairing code"><span>K7QM</span><span>2XPA</span><span>9RTE</span><span>4HWN</span></div>
+        <ul class="facts"><li>Expires after 5 minutes</li><li>Works only once, then it's thrown away</li><li>Locks after 5 wrong tries</li></ul>
+      </article>
+      <article class="stage fade">
+        <h3>Connect</h3><p class="when">Every time, automatically</p>
+        <p>Open the app and it finds your computer by itself and reconnects quietly. It remembers exactly which computer it paired with, and refuses to talk to any other machine claiming to be it.</p>
+      </article>
+      <article class="stage fade">
+        <h3>Chat</h3><p class="when">Whenever you like</p>
+        <p>Pick any model installed on your PC and talk to it. Replies stream in live, and you can switch models or stop a reply at any point.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="connect">
+  <div class="container routes">
+    <div class="fade">
+      <span class="eyebrow">Two ways to connect</span>
+      <h2 style="font-size:clamp(2rem,4vw,3rem);letter-spacing:-.035em">Works even when your Wi-Fi won't.</h2>
+      <p class="lead" style="margin-top:1rem">Lots of home, office and guest networks deliberately stop devices talking to each other, and PC security software often blocks incoming connections. Most apps just fail there. Synapse switches to Bluetooth and keeps going.</p>
+      <div class="route-toggle" role="group" aria-label="Network conditions">
+        <button class="active" aria-pressed="true" data-route="open" data-status="Same network: the phone finds your PC automatically and connects over Wi-Fi.">Normal network</button>
+        <button aria-pressed="false" data-route="blocked" data-status="Devices blocked: Synapse falls back to Bluetooth — no network needed.">Network blocks devices</button>
+      </div>
+      <p class="route-status" id="route-status" aria-live="polite">Same network: the phone finds your PC automatically and connects over Wi-Fi.</p>
+    </div>
+    <div class="diagram fade" id="route-diagram">
+      <svg viewBox="0 0 520 300" role="img" aria-label="Diagram: the phone reaches your PC over Wi-Fi through the router, or directly over Bluetooth. Both routes are encrypted.">
+        <path class="link wifi" d="M122 140 C 170 70, 210 58, 260 58 C 310 58, 350 70, 398 140"/>
+        <path class="link bt" d="M122 172 C 190 262, 330 262, 398 172"/>
+        <g class="node"><rect x="222" y="30" width="76" height="56" rx="16"/><path class="glyph" d="M246 56a20 20 0 0 1 28 0M251 62a12 12 0 0 1 18 0"/><circle cx="260" cy="69" r="2" style="fill:var(--ink)"/></g>
+        <text class="lbl" x="260" y="18" text-anchor="middle">Wi-Fi</text>
+        <text class="sub" x="260" y="104" text-anchor="middle">same network · fast</text>
+        <g class="block"><line x1="324" y1="64" x2="342" y2="82"/><line x1="342" y1="64" x2="324" y2="82"/></g>
+        <g class="node"><rect x="20" y="104" width="102" height="100" rx="18"/><rect class="glyph" x="58" y="122" width="26" height="44" rx="5"/><line class="glyph" x1="68" y1="160" x2="74" y2="160"/><text x="71" y="190" text-anchor="middle">Phone</text></g>
+        <g class="node"><rect x="398" y="104" width="102" height="100" rx="18"/><rect class="glyph" x="428" y="124" width="42" height="28" rx="4"/><path class="glyph" d="M442 160h14M449 152v8"/><text x="449" y="190" text-anchor="middle">Your PC</text></g>
+        <circle class="lock" cx="260" cy="239" r="15"/><rect class="glyph" x="254" y="238" width="12" height="9" rx="2"/><path class="glyph" d="M256.5 238v-3a3.5 3.5 0 0 1 7 0v3"/>
+        <text class="lbl" x="260" y="276" text-anchor="middle">Bluetooth</text>
+        <text class="sub" x="260" y="292" text-anchor="middle">no network needed</text>
+      </svg>
+    </div>
+  </div>
+  <div class="container">
+    <div class="grid grid-3" style="margin-top:clamp(2.5rem,5vw,4rem)">
+      <article class="card fade"><h3>Equally private</h3><p>Both routes carry exactly the same end-to-end encrypted conversation. Neither is the "less secure" one.</p></article>
+      <article class="card fade"><h3>Your choice</h3><p>Let Synapse pick automatically, or pin it to Wi-Fi only or Bluetooth only in the app's settings.</p></article>
+      <article class="card fade"><h3>Never scans</h3><p>Pair your phone and PC once in your system's own Bluetooth settings. Synapse only reaches a computer you've already paired.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section soft">
+  <div class="container feature-row fade">
+    <div class="feature-copy">
+      <span class="eyebrow">Chatting</span>
+      <h3>A proper chat app for your own models.</h3>
+      <p>Everything you'd expect, running on the models installed on your PC.</p>
+      <ul class="checklist"><li>Replies stream in live, word by word</li><li>Keep several conversations; rename or delete them</li><li>Switch models in the middle of a conversation</li><li>Stop a reply that's going the wrong way</li><li>Code shows up as a proper block you can scroll and copy</li></ul>
+    </div>
+    <div class="phones" style="min-height:0"><div class="phone"><img src="assets/synapse-chat.jpg" alt="Synapse chat showing a streamed reply" width="720" height="1560" loading="lazy"></div></div>
+  </div>
+</section>
+
+<section class="section" id="privacy">
+  <div class="container">
+    <div class="section-head fade"><span class="eyebrow">Privacy</span><h2>Private by design, in plain words.</h2></div>
+    <div class="grid grid-3">
+      <article class="card fade"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div><h3>Encrypted end to end</h3><p>Everything between your phone and your computer is encrypted, over Wi-Fi and Bluetooth alike.</p></article>
+      <article class="card fade"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20a7 7 0 0 1 14 0"/><path d="M4 4l16 16"/></svg></div><h3>Your phone knows your PC</h3><p>After pairing, the phone remembers your computer's unique identity. If anything else pretends to be it, the phone refuses to connect and tells you — so nobody can sit in the middle and listen, not even while pairing.</p></article>
+      <article class="card fade"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 20h16M7 16v-4M12 16V8M17 16v-6"/><path d="M4 4l16 16"/></svg></div><h3>Off by default</h3><p>Until you switch Phone pairing on, your computer isn't listening to the network at all.</p></article>
+      <article class="card fade"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M5 5h14a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-8l-4 3v-3H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/></svg></div><h3>A phone can only chat</h3><p>It can list your installed models and talk to them. It can't run coding agents or commands, download anything, or touch your files. Even a stolen phone can't do more than chat.</p></article>
+      <article class="card fade"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 4 4-4 4"/><path d="M12 16h7"/></svg></div><h3>Cut off in one tap</h3><p>Remove a phone instantly from your computer's settings, or unpair from the phone itself.</p></article>
+      <article class="card fade"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9z"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg></div><h3>No account, no cloud</h3><p>There's no sign-up and no Hydron server. Your chats stay between this phone and your computer.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section soft">
+  <div class="container prefs">
+    <div class="fade">
+      <span class="eyebrow">Make it yours</span>
+      <h2 style="font-size:clamp(2rem,4vw,3rem);letter-spacing:-.035em">Four themes. Six accents.<br><span class="soft">Your text, your bubbles.</span></h2>
+      <p class="lead" style="margin-top:1rem">Synapse's Settings screen lets you pick a theme (including a light one), an accent colour, text size, how round the message bubbles are, and which connection to prefer. Try a few here.</p>
+      <div class="pref-controls">
+        <div><label for="pref-theme"><span>Theme</span></label><select id="pref-theme" class="pref-select"><option value="dark">Dark</option><option value="light">Light</option></select></div>
+        <div><span class="pref-label"><span>Accent</span></span><div class="swatches" role="group" aria-label="Accent colour">
+          <button class="swatch active" aria-pressed="true" aria-label="Accent 1" style="--c:#dbe9f6"></button><button class="swatch" aria-pressed="false" aria-label="Accent 2" style="--c:#8fb2ff"></button><button class="swatch" aria-pressed="false" aria-label="Accent 3" style="--c:#c4b0ff"></button><button class="swatch" aria-pressed="false" aria-label="Accent 4" style="--c:#7fe0b4"></button><button class="swatch" aria-pressed="false" aria-label="Accent 5" style="--c:#ffd27a"></button><button class="swatch" aria-pressed="false" aria-label="Accent 6" style="--c:#ffa3c8"></button>
+        </div></div>
+        <div><label for="pref-round"><span>Bubble roundness</span><output id="pref-round-out">Round</output></label><input id="pref-round" type="range" min="4" max="26" value="22"></div>
+        <div><label for="pref-size"><span>Text size</span><output id="pref-size-out">Default</output></label><input id="pref-size" type="range" min="12" max="19" value="15"></div>
+      </div>
+    </div>
+    <div class="mini-phone fade" id="mini-phone" aria-hidden="true">
+      <div class="mini-screen">
+        <div class="mini-top"><div><b>My PC</b><span>● Connected over Wi-Fi</span></div><span class="mini-model">qwen3:0.6b ▾</span></div>
+        <div class="mini-chat"><p class="me">Hello!</p><p class="ai">Hi there! What can I help you with?</p><p class="me">Summarise my notes from today</p></div>
+        <div class="mini-input">Message</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head fade"><span class="eyebrow">FAQ</span><h2>Questions</h2></div>
+    <div class="faq faq-grid fade">
+      <div>
+        <details><summary>Does it work when my computer is off?</summary><p>No. The models run on your PC, so your computer needs to be on with Hydron running. Nothing is stored or processed anywhere else.</p></details>
+        <details><summary>Do I need an account?</summary><p>No. There's no sign-up and no Hydron server. Pairing is done directly between your phone and your computer.</p></details>
+        <details><summary>Why won't it connect over Wi-Fi?</summary><p>Many networks stop devices from talking to each other, and security software on the PC can block incoming connections even when Windows Firewall allows them. Pair your phone and PC in your system's Bluetooth settings and Synapse will use Bluetooth instead.</p></details>
+      </div>
+      <div>
+        <details><summary>Can someone with my phone get into my PC?</summary><p>A phone can only list your models and chat with them. It can't run agents or commands, download anything, or open your files. You can also remove the phone instantly from your computer's settings.</p></details>
+        <details><summary>What if someone sees my pairing code?</summary><p>The code expires after 5 minutes, works only once, and locks after 5 wrong tries. After pairing, your phone only trusts your computer's identity.</p></details>
+        <details><summary>Is there an iPhone version?</summary><p>Synapse is an Android app.</p></details>
+        <details><summary>How do I install the APK?</summary><p>Download the APK on your phone and open it. Android will ask you to allow installs from your browser or file manager the first time; allow it, then tap Install. To check the file, its SHA-256 is <code style="word-break:break-all">26c354b78fcd41dd1967a015c0187a821ebd7e8499506048da2160e272bec3ed</code>.</p></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="download">
+  <div class="container">
+    <div class="download-panel fade">
+      <canvas class="ring" data-density=".7" aria-hidden="true"></canvas>
+      <h2 data-typed data-speed="55">Get Hydron Synapse</h2>
+      <p>Install Synapse on your Android phone and Hydron on your Windows PC, turn on Phone pairing in Hydron's settings, and you're chatting in under a minute.</p>
+      <div class="actions"><a class="btn btn-inverse" href="downloads/Hydron-Synapse-0.3.1.apk" download>Download Synapse for Android</a><a class="btn btn-ghost-inverse" href="downloads/Hydron-Setup.exe">Get Hydron for Windows</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <p class="footer-title">Your models.<br><span class="soft">Your machine.</span></p>
+      <nav class="footer-col" aria-label="Product"><h5>Product</h5><ul><li><a href="downloads/Hydron-Setup.exe">Download</a></li><li><a href="features.html">Features</a></li><li><a href="synapse.html">Synapse for Android</a></li><li><a href="install.html">Install</a></li></ul></nav>
+      <nav class="footer-col" aria-label="Legal"><h5>Legal</h5><ul><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li><li><a href="terms.html#contact">Contact</a></li></ul></nav>
+      <nav class="footer-col" aria-label="Release"><h5>Release</h5><ul><li><a href="https://github.com/hydronai/hydron/releases">Releases</a></li><li><span>macOS · planned</span></li><li><span>Linux · planned</span></li></ul></nav>
+    </div>
+    <div class="footer-bottom"><span>© <span id="year">2026</span> Hydron</span><span>v0.8.1 alpha · Windows x64</span></div>
+  </div>
+</footer>
+<script src="assets/site.js?v=9f985bcd"></script>
+</body>
+</html>
