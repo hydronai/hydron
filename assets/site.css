@@ -50,7 +50,7 @@
   --ink-3:#868791;
   --line:#242429;
   --line-strong:#34343b;
-  --dark:#050506;
+  --dark:#0c0c0e;
   --on-ink:#0b0b0d;
   --ink-hover:#d2d2d8;
   --line-hover:#4c4c55;
@@ -75,7 +75,7 @@
   --ink-3:#868791;
   --line:#242429;
   --line-strong:#34343b;
-  --dark:#050506;
+  --dark:#0c0c0e;
   --on-ink:#0b0b0d;
   --ink-hover:#d2d2d8;
   --line-hover:#4c4c55;
@@ -454,7 +454,12 @@ button.chip:hover{ border-color:var(--ink-3); color:var(--ink); }
 /* Feature explorer: copy scrolls, the screenshot stays pinned and swaps */
 .explorer{ padding:clamp(3rem, 7vw, 6rem) 0; }
 .explorer-grid{ display:grid; grid-template-columns:minmax(0, 4fr) minmax(0, 7fr); gap:clamp(2rem, 6vw, 6rem); }
-.explorer-item{ min-height:62vh; display:flex; flex-direction:column; justify-content:center; opacity:.28; transition:opacity .5s var(--ease); }
+.explorer-item{ min-height:55vh; display:flex; flex-direction:column; justify-content:center; opacity:.35; cursor:pointer; transition:opacity .5s var(--ease); }
+.explorer-item:hover{ opacity:.7; }
+.step-num{ display:inline-flex; align-items:center; gap:.6rem; margin-bottom:1rem; font:500 .8rem var(--font-mono); color:var(--ink-3); }
+.step-num::after{ content:""; width:32px; height:1px; background:currentColor; transition:width .5s var(--ease); }
+.explorer-item.active .step-num{ color:var(--p2); }
+.explorer-item.active .step-num::after{ width:56px; }
 .explorer-item.active{ opacity:1; }
 .explorer-item h3{ font-size:clamp(1.5rem, 2.6vw, 2rem); letter-spacing:-.03em; margin-bottom:1rem; }
 .explorer-item p{ color:var(--ink-2); font-size:1.05rem; }
@@ -466,26 +471,25 @@ button.chip:hover{ border-color:var(--ink-3); color:var(--ink); }
 .explorer-stage img:not(.active){ opacity:0; transform:scale(.98); }
 .explorer-cta{ text-align:center; margin-top:clamp(1rem, 4vw, 3rem); }
 
-/* Use-case slider */
-.cases-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:2rem; margin-bottom:clamp(2rem, 4vw, 3rem); }
+/* Use cases: a simple grid of fully clickable cards */
+.cases-head{ max-width:40rem; margin-bottom:clamp(2rem, 4vw, 3rem); }
 .cases-head h2{ font-size:clamp(2rem, 4vw, 3rem); letter-spacing:-.035em; }
-.cases-head p{ max-width:34rem; color:var(--ink-2); margin-top:1rem; }
-.slider-controls{ display:flex; gap:.25rem; flex:0 0 auto; }
-.slider-btn{ width:44px; height:40px; border:0; border-radius:var(--r-pill); background:transparent; color:var(--ink); display:grid; place-items:center; transition:background .15s, opacity .15s; }
-.slider-btn:hover:not(:disabled){ background:var(--bg-muted); }
-.slider-btn:disabled{ opacity:.3; cursor:default; }
-.slider-btn svg{ width:20px; height:20px; }
-.slider{ display:grid; grid-auto-flow:column; grid-auto-columns:min(460px, 82%); gap:1.25rem; overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; scrollbar-width:none; padding-bottom:.5rem; margin-right:calc((100vw - 100%) / -2); padding-right:clamp(1rem, 4vw, 2.5rem); }
-.slider::-webkit-scrollbar{ display:none; }
-.case{ scroll-snap-align:start; }
-.case-media{ aspect-ratio:4/3; border-radius:var(--r-lg); overflow:hidden; background:var(--dark); margin-bottom:1.25rem; }
-.case-media img{ width:100%; height:100%; object-fit:cover; object-position:left top; transition:transform .8s var(--ease); }
-.case:hover .case-media img{ transform:scale(1.04); }
-.case h3{ font-size:1.35rem; letter-spacing:-.02em; margin-bottom:.5rem; }
-.case p{ color:var(--ink-2); margin-bottom:1rem; }
+.cases-head p{ color:var(--ink-2); margin-top:1rem; font-size:1.05rem; }
+.cases{ display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:1rem; }
+.case{ display:flex; flex-direction:column; padding:.75rem .75rem 1.5rem; border:1px solid var(--line); border-radius:var(--r-lg); background:var(--surface); transition:opacity .7s var(--ease), transform .35s var(--ease), border-color .25s, box-shadow .35s var(--ease); }
+.case.fade:not(.in){ transform:translateY(12px); }
+.case:hover{ transform:translateY(-4px); border-color:var(--line-strong); box-shadow:0 18px 40px -24px var(--shadow); }
+.case:focus-visible{ outline-offset:4px; }
+.case-media{ aspect-ratio:16/10; border-radius:calc(var(--r-lg) - 8px); overflow:hidden; background:var(--dark); margin-bottom:1.25rem; }
+.case-media img{ width:100%; height:100%; object-fit:contain; transition:transform .8s var(--ease); }
+.case:hover .case-media img{ transform:scale(1.03); }
+.case h3{ font-size:1.15rem; letter-spacing:-.02em; margin:0 .5rem .5rem; }
+.case p{ color:var(--ink-2); font-size:.95rem; margin:0 .5rem 1.25rem; flex:1; }
+.case .arrow-link{ margin:0 .5rem; }
+@media (max-width:1180px){ .cases{ grid-template-columns:repeat(2, minmax(0, 1fr)); } }
 .arrow-link{ display:inline-flex; align-items:center; gap:.4rem; font-weight:500; font-size:.95rem; }
 .arrow-link::after{ content:"→"; transition:transform .25s var(--ease); }
-.arrow-link:hover::after{ transform:translateX(4px); }
+.arrow-link:hover::after,.case:hover .arrow-link::after{ transform:translateX(4px); }
 
 /* Product cards with a dot field that gathers on hover */
 .try-grid{ display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:1rem; }
@@ -514,14 +518,15 @@ button.chip:hover{ border-color:var(--ink-3); color:var(--ink); }
 @media (max-width:960px){
   .explorer-grid{ grid-template-columns:1fr; }
   .explorer-stage{ display:none; }
-  .explorer-item{ min-height:0; opacity:1; padding:1.5rem 0; }
+  .explorer-item{ min-height:0; opacity:1; padding:1.5rem 0; cursor:auto; }
   .explorer-item .frame{ display:block; }
   .try-grid{ grid-template-columns:1fr; }
-  .cases-head{ flex-direction:column; align-items:flex-start; }
+  .cases{ grid-template-columns:repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width:640px){
   .hero{ min-height:auto; }
   .try-card{ min-height:0; }
+  .cases{ grid-template-columns:1fr; }
   .download-panel{ padding:5rem 1.5rem; }
 }
 
