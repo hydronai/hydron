@@ -7,13 +7,13 @@
 <meta name="description" content="Run local AI models, coding agents, chat, and project tools in one Windows workspace.">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0b0b0d" media="(prefers-color-scheme: dark)">
-<script>(function(){var t;try{t=localStorage.getItem('hydron-theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})();</script>
+<script>(function(){var t;try{t=localStorage.getItem('hydron-theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';var d=document.documentElement;d.setAttribute('data-theme',t);d.className=d.className.replace('no-js','js')})();</script>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23111113'/%3E%3Cg fill='none' stroke='%23fff' stroke-width='3'%3E%3Cellipse cx='32' cy='32' rx='25' ry='8'/%3E%3Cellipse cx='32' cy='32' rx='25' ry='8' transform='rotate(60 32 32)'/%3E%3Cellipse cx='32' cy='32' rx='25' ry='8' transform='rotate(-60 32 32)'/%3E%3C/g%3E%3Ccircle cx='32' cy='32' r='5' fill='%23fff'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=b88aff19">
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@8..144,400..600&family=Google+Sans+Code:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=5d15d54e">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -38,109 +38,106 @@
 </header>
 
 <main id="main">
-<section class="hero">
+<section class="hero ring-host">
+  <canvas class="ring" aria-hidden="true"></canvas>
   <div class="container">
-    <h1>Your models.<br><span class="soft">Your machine.</span></h1>
-    <p class="lead">Hydron is a desktop workspace for local AI. Run supported models on your PC, open the coding agents you already use, and work on your code — all in one focused app.</p>
-    <div class="actions center"><a class="btn btn-primary" href="downloads/Hydron-Setup.exe">Download for Windows</a><a class="btn btn-secondary" href="features.html">Explore features</a></div>
-    <p class="hero-meta">Free alpha · Windows 10 &amp; 11 (x64) · Self-contained installer</p>
+    <h1 data-typed data-typed-now data-speed="60">Your models.<br><span class="soft">Your machine.</span></h1>
+    <p class="lead">Hydron is a desktop workspace for local AI. Run models on your PC, launch the coding agents you already use, and build in one focused app.</p>
+    <div class="actions center"><a class="btn btn-primary" href="downloads/Hydron-Setup.exe">Download for Windows</a><a class="btn btn-secondary" href="#product">Explore the product</a></div>
+    <p class="hero-meta">Free alpha · v0.8.1 · Windows 10 &amp; 11 (x64)</p>
   </div>
 </section>
 
-<section class="showcase">
-  <div class="container fade">
-    <div class="frame"><img id="product-shot" src="assets/hydron-chat.png" alt="Hydron chat interface" width="1280" height="720"></div>
-    <div style="text-align:center">
-      <div class="tabs" role="tablist" aria-label="Hydron product views">
-        <button class="tab active" role="tab" aria-selected="true" data-shot="assets/hydron-chat.png" data-alt="Hydron chat interface" data-caption="Chat with a local model or a connected coding agent.">Chat</button>
-        <button class="tab" role="tab" aria-selected="false" data-shot="assets/hydron-launch.png" data-alt="Hydron agents and local models screen" data-caption="Install models and launch the agents already on your PC.">Agents &amp; models</button>
-        <button class="tab" role="tab" aria-selected="false" data-shot="assets/hydron-ide.png" data-alt="Hydron integrated development environment" data-caption="Open a folder, edit files, and run your project.">IDE</button>
+<section class="showcase hero-shot">
+  <div class="container">
+    <div class="frame"><img src="assets/hydron-chat.png" alt="Hydron chat interface with projects, launch, IDE, telescope, compare and virtual machines in the sidebar" width="1918" height="1078"></div>
+  </div>
+</section>
+
+<section class="statement">
+  <div class="container">
+    <ul class="bouncers" aria-hidden="true">
+      <li style="--i:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M5 5h14a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-8l-4 3v-3H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/></svg></li><li style="--i:1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9z"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg></li><li style="--i:2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 4 4-4 4"/><path d="M12 16h7"/></svg></li><li style="--i:3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m8 7-5 5 5 5M16 7l5 5-5 5"/></svg></li><li style="--i:4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></li>
+    </ul>
+    <p class="statement-text" data-typed data-speed="24">Hydron is a local-first AI workspace that brings your models, your coding agents, and your code together on your own machine.</p>
+  </div>
+</section>
+
+<section class="explorer" id="product">
+  <div class="container explorer-grid">
+    <div class="explorer-list">
+      <article class="explorer-item">
+        <h3>Hydron app</h3>
+        <p>Your home base for local AI. Chat with a model running on your PC or with a connected coding agent, and keep related conversations together in Projects.</p>
+        <div class="frame"><img src="assets/hydron-chat.png" alt="" width="1918" height="1078" loading="lazy"></div>
+      </article>
+      <article class="explorer-item">
+        <h3>Launch</h3>
+        <p>See every supported agent on your PC — Codex, Claude Code, Copilot CLI and more — alongside Hydron's own local model engine, and install models from a built-in command console.</p>
+        <div class="frame"><img src="assets/hydron-launch.png" alt="" width="1918" height="1078" loading="lazy"></div>
+      </article>
+      <article class="explorer-item">
+        <h3>Hydron CLI</h3>
+        <p>Type <code>hydron</code> in any shell for a coding agent on a local model. It starts read-only, attaches files with <code>@</code>, runs commands with <code>!</code>, and <code>/undo</code> reverts any edit.</p>
+        <div class="frame natural"><img src="assets/hydron-cli.png" alt="" width="1870" height="832" loading="lazy"></div>
+      </article>
+      <article class="explorer-item">
+        <h3>Hydron IDE</h3>
+        <p>Open a folder and edit beside your agents. Switch to VS Code when you need your extensions, press Ctrl+I to ask an agent about a file, and run it with F5.</p>
+        <div class="frame"><img src="assets/hydron-ide.png" alt="" width="1536" height="810" loading="lazy"></div>
+      </article>
+    </div>
+    <div class="explorer-stage" aria-hidden="true">
+      <div class="frame">
+        <img src="assets/hydron-chat.png" alt="" width="1918" height="1078"><img src="assets/hydron-launch.png" alt="" width="1918" height="1078" loading="lazy"><img src="assets/hydron-cli.png" alt="" width="1870" height="832" loading="lazy"><img src="assets/hydron-ide.png" alt="" width="1536" height="810" loading="lazy">
       </div>
-      <p class="tab-caption" id="product-caption">Chat with a local model or a connected coding agent.</p>
     </div>
   </div>
+  <div class="container explorer-cta"><a class="btn btn-secondary" href="features.html">Explore all features</a></div>
 </section>
 
-<section class="section soft">
+<section class="section" data-slider-wrap>
   <div class="container">
-    <div class="section-head center fade">
-      <h2>One workspace for models, agents, and code.</h2>
-      <p>Stop switching between a model runner, a terminal, and an editor. Hydron keeps them side by side.</p>
+    <div class="cases-head fade">
+      <div>
+        <h2>Built for developers<br><span class="soft">who want control.</span></h2>
+        <p>Whether you care most about privacy, already live in a coding agent, or just want to learn, Hydron keeps the models and the code on your machine.</p>
+      </div>
+      <div class="slider-controls">
+        <button class="slider-btn" data-prev aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+        <button class="slider-btn" data-next aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+      </div>
     </div>
-    <div class="grid grid-3">
-      <article class="card fade"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9z"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg></div><h3>Local models</h3><p>Download and run supported models like Gemma, Phi, Llama, Qwen, and DeepSeek. Local conversations never leave your PC.</p></article>
-      <article class="card fade"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 4 4-4 4"/><path d="M12 16h7"/></svg></div><h3>Your coding agents</h3><p>Hydron detects Codex, Claude Code, Copilot CLI, and other supported agents you have installed, and launches them in one place.</p></article>
-      <article class="card fade"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m8 7-5 5 5 5M16 7l5 5-5 5"/></svg></div><h3>Integrated IDE</h3><p>Open a folder, edit with syntax highlighting, search files, and run or build your project with output alongside.</p></article>
+    <div class="slider fade">
+      <article class="case"><div class="case-media"><img src="assets/hydron-chat.png" alt="" loading="lazy"></div><h3 data-typed>Privacy-first developer</h3><p>Local model conversations never leave your PC. No account, no telemetry, no Hydron cloud.</p><a class="arrow-link" href="privacy.html">How Hydron handles data</a></article>
+      <article class="case"><div class="case-media"><img src="assets/hydron-launch.png" alt="" loading="lazy"></div><h3 data-typed>Agent power user</h3><p>Launch Codex, Claude Code, Copilot CLI and others from one place, with your own subscriptions.</p><a class="arrow-link" href="features.html#features">See supported agents</a></article>
+      <article class="case"><div class="case-media"><img src="assets/hydron-cli.png" alt="" loading="lazy"></div><h3 data-typed>Terminal-first developer</h3><p>Stay in the shell with the Hydron CLI: a read-only-by-default agent with undo built in.</p><a class="arrow-link" href="features.html">Meet the CLI</a></article>
+      <article class="case"><div class="case-media"><img src="assets/hydron-ide.png" alt="" loading="lazy"></div><h3 data-typed>Learner &amp; hobbyist</h3><p>Start with a small free model on the hardware you have, and grow into bigger ones.</p><a class="arrow-link" href="install.html">Get started</a></article>
     </div>
   </div>
 </section>
 
 <section class="section">
-  <div class="container">
-    <div class="feature-row fade">
-      <div class="feature-copy">
-        <span class="eyebrow">Models</span>
-        <h3>Pick a model that fits your hardware.</h3>
-        <p>Browse a curated catalogue, install with one click, and switch models mid-conversation. Start small and move up as your machine allows.</p>
-        <ul class="checklist"><li>Compact models from 135M to 9B parameters</li><li>Runs on CPU, faster with a compatible GPU</li><li>Chats saved locally with the model you chose</li></ul>
-      </div>
-      <div class="frame"><img src="assets/hydron-launch.png" alt="Hydron agents and local models screen" width="1280" height="720" loading="lazy"></div>
+  <div class="container try-grid">
+    <div class="try-card fade">
+      <div><p class="try-label">Free during alpha</p><h3>For developers</h3><p>Your AI, on your hardware</p></div>
+      <div class="actions"><a class="btn btn-primary" href="downloads/Hydron-Setup.exe">Download</a></div>
     </div>
-
-    <div class="feature-row flip fade">
-      <div class="feature-copy">
-        <span class="eyebrow">Command line</span>
-        <h3>Prefer the terminal? So does Hydron.</h3>
-        <p>Run <code>hydron</code> in any shell for a full agent in your terminal. It starts read-only, so it can look but not change files until you switch modes, and <code>/undo</code> reverts any edit.</p>
-        <ul class="checklist"><li><code>@file</code> attaches files, <code>!</code> runs shell commands, <code>#</code> saves notes to memory</li><li><code>/agent</code> switches agent and model, <code>/model</code> picks a local one</li><li>34 built-in slash commands, plus your own</li><li>Manage models with simple commands:</li></ul>
-        <div class="chips" style="margin-top:1.5rem">
-          <button class="chip active" data-command="hydron pull gemma3:4b">Install Gemma</button>
-          <button class="chip" data-command="hydron run phi4-mini:3.8b">Run Phi</button>
-          <button class="chip" data-command="hydron pull deepseek-r1:8b">Install DeepSeek</button>
-          <button class="chip" data-command="hydron list">List models</button>
-        </div>
-        <div class="cmd"><code id="cmd-output">hydron pull gemma3:4b</code><button class="copy-btn" data-copy="cmd-output">Copy</button></div>
-      </div>
-      <div class="frame natural"><img src="assets/hydron-cli.png" alt="Hydron command-line agent welcome screen showing model, read-only mode, and tips" width="1870" height="832" loading="lazy"></div>
+    <div class="try-card fade">
+      <div><p class="try-label">Included with the app</p><h3>For the terminal</h3><p>Hydron in any shell</p></div>
+      <div class="cmd"><code id="cli-cmd">hydron</code><button class="copy-btn" data-copy="cli-cmd">Copy</button></div>
     </div>
   </div>
 </section>
 
-<section class="section soft">
+<section class="download" id="download">
   <div class="container">
-    <div class="section-head fade">
-      <span class="eyebrow">Privacy</span>
-      <h2>Private by design, not by setting.</h2>
-      <p>Hydron has no Hydron cloud. What happens on your machine stays on your machine, unless you choose a third-party agent or service.</p>
+    <div class="download-panel fade">
+      <canvas class="ring" data-density=".7" aria-hidden="true"></canvas>
+      <h2 data-typed data-speed="55">Download Hydron</h2>
+      <p>v0.8.1 alpha · Windows 10 &amp; 11 (x64) · App, CLI, runtime, and local model engine in one installer.</p>
+      <div class="actions"><a class="btn btn-inverse" href="downloads/Hydron-Setup.exe">Download for Windows</a><a class="btn btn-ghost-inverse" href="install.html">Installation guide</a></div>
     </div>
-    <div class="grid grid-3">
-      <article class="card fade"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20a7 7 0 0 1 14 0"/><path d="M4 4l16 16"/></svg></div><h3>No account</h3><p>No sign-up, login, email, or subscription is needed to use Hydron.</p></article>
-      <article class="card fade"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 20h16M7 16v-4M12 16V8M17 16v-6"/><path d="M4 4l16 16"/></svg></div><h3>No telemetry</h3><p>No analytics, usage tracking, crash reporting, or advertising identifiers.</p></article>
-      <article class="card fade"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div><h3>Local by default</h3><p>Models, chats, and settings are stored on your PC and under your control.</p></article>
-    </div>
-    <p class="fade" style="margin-top:2rem"><a class="btn btn-secondary" href="privacy.html">Read the privacy policy</a></p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="feature-row fade">
-      <div class="feature-copy">
-        <span class="eyebrow">Personalisation</span>
-        <h3>Make the workspace yours.</h3>
-        <p>Choose from ten visual presets, move navigation to either side, adjust density and rounding, and set how local models respond. Export your theme and bring it anywhere.</p>
-        <p style="margin-top:1.5rem"><a class="btn btn-secondary" href="features.html#customize">Try the interactive preview</a></p>
-      </div>
-      <div class="frame"><img src="assets/hydron-ide.png" alt="Hydron integrated development environment" width="1280" height="720" loading="lazy"></div>
-    </div>
-  </div>
-</section>
-
-<section class="cta">
-  <div class="container fade">
-    <h2>Start on your own machine.</h2>
-    <p>The Windows installer includes the Hydron desktop app, CLI, .NET runtime, and local model engine.</p>
-    <div class="actions center"><a class="btn btn-primary" href="downloads/Hydron-Setup.exe">Download for Windows</a><a class="btn btn-secondary" href="install.html">Installation guide</a></div>
   </div>
 </section>
 </main>
@@ -148,17 +145,15 @@
 <footer class="footer">
   <div class="container">
     <div class="footer-top">
-      <div class="footer-brand">
-        <a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3.5"><ellipse cx="32" cy="32" rx="25" ry="8"/><ellipse cx="32" cy="32" rx="25" ry="8" transform="rotate(60 32 32)"/><ellipse cx="32" cy="32" rx="25" ry="8" transform="rotate(-60 32 32)"/></g><circle cx="32" cy="32" r="5" fill="currentColor"/></svg><span>Hydron</span></a>
-        <p>A local-first AI workspace for Windows. Your models, your agents, your machine.</p>
-      </div>
-      <nav class="footer-col" aria-label="Product"><h5>Product</h5><ul><li><a href="features.html">Features</a></li><li><a href="install.html">Install</a></li><li><a href="install.html#requirements">Requirements</a></li></ul></nav>
+      <p class="footer-title">Your models.<br><span class="soft">Your machine.</span></p>
+      <nav class="footer-col" aria-label="Product"><h5>Product</h5><ul><li><a href="downloads/Hydron-Setup.exe">Download</a></li><li><a href="features.html">Features</a></li><li><a href="install.html">Install</a></li><li><a href="install.html#requirements">Requirements</a></li></ul></nav>
       <nav class="footer-col" aria-label="Legal"><h5>Legal</h5><ul><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li><li><a href="terms.html#contact">Contact</a></li></ul></nav>
-      <nav class="footer-col" aria-label="Release"><h5>Release</h5><ul><li><a href="downloads/Hydron-Setup.exe">Windows download</a></li><li><span>macOS · planned</span></li><li><span>Linux · planned</span></li></ul></nav>
+      <nav class="footer-col" aria-label="Release"><h5>Release</h5><ul><li><a href="https://github.com/hydronai/hydron/releases">Releases</a></li><li><span>macOS · planned</span></li><li><span>Linux · planned</span></li></ul></nav>
     </div>
+    <div class="wordmark" aria-hidden="true"><span style="--i:0">H</span><span style="--i:1">y</span><span style="--i:2">d</span><span style="--i:3">r</span><span style="--i:4">o</span><span style="--i:5">n</span></div>
     <div class="footer-bottom"><span>© <span id="year">2026</span> Hydron</span><span>v0.8.1 alpha · Windows x64</span></div>
   </div>
 </footer>
-<script src="assets/site.js?v=6daf1478"></script>
+<script src="assets/site.js?v=18de6a3c"></script>
 </body>
 </html>
