@@ -319,7 +319,7 @@ button.chip:hover{ border-color:var(--ink-3); color:var(--ink); }
 /* ---------- CTA ---------- */
 
 /* ---------- Footer ---------- */
-/* Footer: title, link columns and a full-width wordmark */
+/* Footer: title and link columns */
 .footer{ padding:clamp(4rem, 8vw, 6rem) 0 1.75rem; font-size:.92rem; overflow:hidden; }
 .footer-top{ display:grid; grid-template-columns:1.6fr repeat(3, 1fr); gap:2rem; padding-bottom:clamp(3rem, 7vw, 5rem); }
 .footer-title{ font-size:clamp(1.6rem, 3vw, 2.25rem); font-weight:500; letter-spacing:-.03em; line-height:1.1; }
@@ -329,10 +329,7 @@ button.chip:hover{ border-color:var(--ink-3); color:var(--ink); }
 .footer-col a,.footer-col span{ color:var(--ink); }
 .footer-col span{ color:var(--ink-3); }
 .footer-col a:hover{ color:var(--ink-3); }
-.wordmark{ display:flex; justify-content:space-between; font-weight:500; font-size:clamp(5rem, 23.5vw, 21rem); line-height:.8; letter-spacing:-.06em; color:var(--ink); user-select:none; margin:0 -.02em; padding-bottom:.2em; }
-.wordmark span{ display:inline-block; transform:translateY(40%); opacity:0; transition:transform 1s var(--ease), opacity .8s var(--ease); transition-delay:calc(var(--i) * 70ms); }
-.wordmark.in span,.no-js .wordmark span{ transform:none; opacity:1; }
-.footer-bottom{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem; margin-top:0; color:var(--ink-3); font-size:.85rem; }
+.footer-bottom{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem; padding-top:1.5rem; border-top:1px solid var(--line); color:var(--ink-3); font-size:.85rem; }
 
 /* ---------- Gentle entrance ---------- */
 .fade{ opacity:0; transform:translateY(12px); transition:opacity .7s var(--ease), transform .7s var(--ease); }
@@ -534,6 +531,5 @@ button.chip:hover{ border-color:var(--ink-3); color:var(--ink); }
   .showcase .frame.tilting{ transform:none; }
   #cmd-output::after{ display:none; }
   .bouncers li{ animation:none; }
-  .wordmark span{ transform:none; opacity:1; }
   .explorer-item{ opacity:1; }
 }
