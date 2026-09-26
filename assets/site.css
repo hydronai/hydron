@@ -421,7 +421,7 @@ button.chip:hover{ border-color:var(--ink-3); color:var(--ink); }
 
 /* ================= Antigravity-inspired components ================= */
 .visually-hidden{ position:absolute !important; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
-.soft{ color:var(--ink-3); }
+span.soft{ color:var(--ink-3); }
 
 /* Typed text: characters appear one by one behind a blinking caret */
 .js [data-typed]:not(.armed){ visibility:hidden; animation:typed-failsafe 0s 2.5s forwards; }
@@ -530,6 +530,104 @@ button.chip:hover{ border-color:var(--ink-3); color:var(--ink); }
   .download-panel{ padding:5rem 1.5rem; }
 }
 
+
+/* ================= Synapse (phone app) page ================= */
+.syn-hero{ padding:clamp(3rem, 8vw, 6rem) 0 clamp(3rem, 6vw, 5rem); overflow:hidden; }
+.syn-hero-grid{ display:grid; grid-template-columns:minmax(0, 1.05fr) minmax(0, .95fr); gap:clamp(2rem, 5vw, 4rem); align-items:center; }
+.syn-hero h1{ font-size:clamp(2.6rem, 6vw, 5rem); letter-spacing:-.05em; line-height:1.02; }
+.syn-hero .lead{ margin:1.5rem 0 2rem; max-width:34rem; }
+.syn-meta{ margin-top:1rem; font-size:.88rem; color:var(--ink-3); }
+.pill-tag{ display:inline-flex; align-items:center; gap:.5rem; padding:.35rem .8rem; border-radius:var(--r-pill); background:var(--bg-muted); color:var(--ink-2); font-size:.85rem; margin-bottom:1.25rem; }
+.pill-tag::before{ content:""; width:7px; height:7px; border-radius:50%; background:#34c759; box-shadow:0 0 0 3px rgba(52,199,89,.18); }
+
+.phones{ position:relative; display:flex; justify-content:center; align-items:flex-end; gap:clamp(.75rem, 2vw, 1.5rem); min-height:clamp(420px, 48vw, 600px); }
+.phone{ width:clamp(170px, 19vw, 250px); aspect-ratio:923/2000; border-radius:clamp(26px, 3vw, 38px); padding:clamp(5px, .6vw, 8px); background:#17181c; box-shadow:0 0 0 1px rgba(255,255,255,.06) inset, 0 40px 80px -30px var(--shadow); flex:0 0 auto; }
+.phone img{ width:100%; height:100%; object-fit:cover; border-radius:calc(clamp(26px, 3vw, 38px) - 7px); }
+.phones .phone:first-child{ transform:translateY(-8%) rotate(-4deg); }
+.phones .phone:last-child{ transform:rotate(3deg); }
+
+.stages{ display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:1rem; counter-reset:stage; }
+.stage{ position:relative; padding:clamp(1.5rem, 3vw, 2rem); border-radius:var(--r-lg); background:var(--surface); border:1px solid var(--line); }
+.section.soft .stage{ border-color:transparent; }
+.stage::before{ counter-increment:stage; content:"0" counter(stage); display:block; font:500 .85rem var(--font-mono); color:var(--p2); margin-bottom:1.25rem; }
+.stage h3{ font-size:1.3rem; letter-spacing:-.02em; margin-bottom:.35rem; }
+.stage .when{ font-size:.85rem; color:var(--ink-3); margin-bottom:1rem; }
+.stage p{ color:var(--ink-2); }
+.code-demo{ display:flex; gap:.3rem; margin-top:1.25rem; font:500 .95rem var(--font-mono); flex-wrap:wrap; }
+.code-demo span{ padding:.35rem .5rem; border-radius:8px; background:var(--bg-muted); letter-spacing:.08em; }
+.facts{ display:grid; gap:.4rem; margin-top:1.25rem; font-size:.9rem; color:var(--ink-2); }
+.facts li{ position:relative; padding-left:1.1rem; }
+.facts li::before{ content:""; position:absolute; left:0; top:.65em; width:5px; height:5px; border-radius:50%; background:var(--ink-3); }
+
+/* Route diagram: Wi-Fi vs Bluetooth */
+.routes{ display:grid; grid-template-columns:minmax(0, 1fr) minmax(0, 1.1fr); gap:clamp(2rem, 5vw, 4rem); align-items:center; }
+.route-toggle{ display:inline-flex; padding:.3rem; gap:.25rem; background:var(--bg-muted); border-radius:var(--r-pill); margin:1.5rem 0 1rem; flex-wrap:wrap; }
+.route-toggle button{ border:0; background:transparent; color:var(--ink-2); padding:.55rem 1rem; border-radius:var(--r-pill); font-size:.88rem; font-weight:500; }
+.route-toggle button.active{ background:var(--surface); color:var(--ink); box-shadow:0 1px 3px rgba(0,0,0,.1); }
+.route-status{ min-height:3em; color:var(--ink-2); font-size:.95rem; }
+.diagram{ padding:clamp(1.25rem, 3vw, 2rem); border-radius:var(--r-lg); background:var(--bg-soft); border:1px solid var(--line); }
+.diagram svg{ width:100%; height:auto; overflow:visible; }
+.diagram .node rect{ fill:var(--surface); stroke:var(--line-strong); }
+.diagram .node text,.diagram .lbl{ fill:var(--ink); font:500 13px var(--font-body); }
+.diagram .sub{ fill:var(--ink-3); font:400 11px var(--font-body); }
+.diagram .glyph{ fill:none; stroke:var(--ink); stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
+.diagram .link{ fill:none; stroke-width:2.5; stroke-linecap:round; stroke-dasharray:2 9; transition:stroke .4s, opacity .4s; animation:flow 1s linear infinite; }
+.diagram .link.wifi{ stroke:var(--p2); }
+.diagram .link.bt{ stroke:var(--p3); opacity:.35; animation-play-state:paused; }
+.diagram .block{ opacity:0; transition:opacity .3s; }
+.diagram .block line{ stroke:#e5484d; stroke-width:3; stroke-linecap:round; }
+.diagram.blocked .link.wifi{ stroke:var(--line-strong); animation-play-state:paused; }
+.diagram.blocked .link.bt{ opacity:1; animation-play-state:running; }
+.diagram.blocked .block{ opacity:1; }
+.diagram .lock{ fill:var(--surface); stroke:var(--line-strong); }
+@keyframes flow{ to{ stroke-dashoffset:-22; } }
+
+/* Settings preview: a phone chat restyled live */
+.prefs{ display:grid; grid-template-columns:minmax(0, 1fr) auto; gap:clamp(2rem, 6vw, 5rem); align-items:center; }
+.pref-controls{ display:grid; gap:1.5rem; margin-top:1.75rem; max-width:28rem; }
+.pref-controls label,.pref-label{ display:flex; justify-content:space-between; font-size:.9rem; color:var(--ink-2); margin-bottom:.6rem; }
+.pref-controls output{ color:var(--ink); font-weight:500; }
+.pref-controls input[type=range]{ width:100%; accent-color:var(--ink); }
+.pref-select{ width:100%; padding:.6rem .75rem; border:1px solid var(--line-strong); border-radius:var(--r-sm); background:var(--surface); color:var(--ink); font:inherit; }
+.swatches{ display:flex; gap:.6rem; flex-wrap:wrap; }
+.swatch{ width:34px; height:34px; border-radius:50%; border:2px solid var(--surface); box-shadow:0 0 0 1px var(--line-strong); background:var(--c); transition:transform .2s var(--ease), box-shadow .2s; }
+.swatch:hover{ transform:scale(1.08); }
+.swatch.active{ box-shadow:0 0 0 2px var(--ink); }
+.mini-phone{ --accent:#dbe9f6; --radius:22px; --fs:15px; --bg:#0a121c; --panel:#111b27; --fg:#eef2f6; --edge:#1f2c3b; width:clamp(240px, 26vw, 300px); aspect-ratio:9/17; border-radius:36px; padding:8px; background:#17181c; box-shadow:0 40px 80px -30px var(--shadow); }
+.mini-phone.light{ --bg:#f4f6f9; --panel:#ffffff; --fg:#10151c; --edge:#dde3ea; }
+.mini-screen{ height:100%; border-radius:29px; background:var(--bg); color:var(--fg); display:flex; flex-direction:column; overflow:hidden; font-size:var(--fs); transition:background .3s, color .3s; }
+.mini-top{ display:flex; justify-content:space-between; align-items:center; padding:1.1rem 1rem .8rem; border-bottom:1px solid var(--edge); font-size:.8em; }
+.mini-top b{ display:block; font-size:1.05em; font-weight:500; }
+.mini-top span{ color:#34c759; font-size:.85em; }
+.mini-model{ padding:.35em .7em; border-radius:999px; background:var(--panel); border:1px solid var(--edge); font-size:.85em; }
+.mini-chat{ flex:1; padding:1rem; display:flex; flex-direction:column; gap:.7rem; }
+.mini-chat p{ margin:0; padding:.6em .9em; max-width:82%; line-height:1.35; border-radius:var(--radius); transition:border-radius .2s, background .3s; }
+.mini-chat .me{ align-self:flex-end; background:var(--accent); color:#0b1118; border-bottom-right-radius:min(var(--radius), 6px); }
+.mini-chat .ai{ background:var(--panel); border:1px solid var(--edge); border-bottom-left-radius:min(var(--radius), 6px); }
+.mini-input{ margin:0 .75rem .9rem; padding:.7em 1em; border-radius:999px; background:var(--panel); border:1px solid var(--edge); color:#7d8894; font-size:.85em; }
+
+/* Compact FAQ grid on the Synapse page */
+.faq-grid{ display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:0 clamp(2rem, 5vw, 4rem); }
+
+/* Synapse teaser on the home page */
+.teaser{ display:grid; grid-template-columns:minmax(0, 1.2fr) minmax(0, .8fr); gap:2rem; align-items:center; padding:clamp(2rem, 5vw, 3.5rem); border-radius:var(--r-lg); background:var(--bg-soft); overflow:hidden; }
+.teaser h2{ font-size:clamp(1.8rem, 3.6vw, 2.75rem); letter-spacing:-.035em; }
+.teaser p{ color:var(--ink-2); margin:1rem 0 1.75rem; max-width:32rem; }
+.teaser .phones{ min-height:0; margin-bottom:calc(-1 * clamp(2rem, 5vw, 3.5rem) - 120px); }
+.teaser .phone{ width:clamp(150px, 16vw, 200px); }
+
+@media (max-width:960px){
+  .syn-hero-grid,.routes,.prefs,.teaser{ grid-template-columns:1fr; }
+  .stages{ grid-template-columns:1fr; }
+  .faq-grid{ grid-template-columns:1fr; }
+  .prefs .mini-phone{ justify-self:center; }
+  .teaser .phones{ margin-bottom:-160px; }
+}
+@media (max-width:640px){
+  .phones{ min-height:0; }
+  .phone{ width:42vw; }
+}
+
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{ animation-duration:.001ms !important; transition-duration:.001ms !important; scroll-behavior:auto !important; }
   .fade{ opacity:1; transform:none; }
@@ -537,4 +635,5 @@ button.chip:hover{ border-color:var(--ink-3); color:var(--ink); }
   #cmd-output::after{ display:none; }
   .bouncers li{ animation:none; }
   .explorer-item{ opacity:1; }
+  .diagram .link{ animation:none; }
 }

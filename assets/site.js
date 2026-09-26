@@ -307,6 +307,37 @@
     }
   }
 
+  /* Synapse: show how the phone falls back to Bluetooth when a network blocks devices. */
+  var diagram = document.getElementById('route-diagram');
+  if(diagram){
+    var status = document.getElementById('route-status');
+    var routeBtns = document.querySelectorAll('[data-route]');
+    routeBtns.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var blocked = btn.getAttribute('data-route') === 'blocked';
+        routeBtns.forEach(function(b){ var on = b === btn; b.classList.toggle('active', on); b.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+        diagram.classList.toggle('blocked', blocked);
+        status.textContent = btn.getAttribute('data-status');
+      });
+    });
+  }
+
+  /* Synapse: a small phone that previews the app's appearance settings. */
+  var mini = document.getElementById('mini-phone');
+  if(mini){
+    document.querySelectorAll('.swatch').forEach(function(sw, _, all){
+      sw.addEventListener('click', function(){
+        all.forEach(function(x){ var on = x === sw; x.classList.toggle('active', on); x.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+        mini.style.setProperty('--accent', sw.style.getPropertyValue('--c'));
+      });
+    });
+    var themeSel = document.getElementById('pref-theme');
+    themeSel.addEventListener('change', function(){ mini.classList.toggle('light', themeSel.value === 'light'); });
+    var round = document.getElementById('pref-round'), size = document.getElementById('pref-size');
+    round.addEventListener('input', function(){ mini.style.setProperty('--radius', round.value + 'px'); document.getElementById('pref-round-out').textContent = round.value < 8 ? 'Square' : round.value < 18 ? 'Soft' : 'Round'; });
+    size.addEventListener('input', function(){ mini.style.setProperty('--fs', size.value + 'px'); document.getElementById('pref-size-out').textContent = size.value < 14 ? 'Small' : size.value < 17 ? 'Default' : 'Large'; });
+  }
+
   /* Appearance preview (features page). */
   var frame = document.getElementById('appearance-frame');
   if(frame){
