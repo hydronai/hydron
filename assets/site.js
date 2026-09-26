@@ -5,7 +5,7 @@
   var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* Official Hydron release download. */
-  var DOWNLOAD = 'https://github.com/hydronai/hydron/releases/download/v0.6.0-alpha/Hydron-Setup-0.6.0-alpha-win-x64.exe';
+  var DOWNLOAD = 'https://github.com/hydronai/hydron/releases/download/v0.8.1/Hydron-Setup-0.8.1-alpha-win-x64.exe';
   document.querySelectorAll('a[href="downloads/Hydron-Setup.exe"], .js-download').forEach(function(link){ link.href = DOWNLOAD; });
 
   /* Navigation: border on scroll, mobile toggle. */
