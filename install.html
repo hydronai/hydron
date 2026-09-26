@@ -7,13 +7,13 @@
 <meta name="description" content="Download and install Hydron for Windows. System requirements, setup steps, and troubleshooting.">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0b0b0d" media="(prefers-color-scheme: dark)">
-<script>(function(){var t;try{t=localStorage.getItem('hydron-theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})();</script>
+<script>(function(){var t;try{t=localStorage.getItem('hydron-theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';var d=document.documentElement;d.setAttribute('data-theme',t);d.className=d.className.replace('no-js','js')})();</script>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23111113'/%3E%3Cg fill='none' stroke='%23fff' stroke-width='3'%3E%3Cellipse cx='32' cy='32' rx='25' ry='8'/%3E%3Cellipse cx='32' cy='32' rx='25' ry='8' transform='rotate(60 32 32)'/%3E%3Cellipse cx='32' cy='32' rx='25' ry='8' transform='rotate(-60 32 32)'/%3E%3C/g%3E%3Ccircle cx='32' cy='32' r='5' fill='%23fff'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=b88aff19">
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@8..144,400..600&family=Google+Sans+Code:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=5d15d54e">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -41,7 +41,7 @@
 <section class="page-hero">
   <div class="container">
     <span class="eyebrow">Install</span>
-    <h1>From download to first prompt.</h1>
+    <h1 data-typed data-typed-now data-speed="38">From download to first prompt.</h1>
     <p class="lead">Hydron ships as a self-contained Windows installer. You do not need to install .NET or another local model application first.</p>
     <div class="actions"><a class="btn btn-primary" href="downloads/Hydron-Setup.exe">Download Hydron Setup</a><a class="btn btn-secondary" href="#requirements">System requirements</a></div>
   </div>
@@ -110,11 +110,14 @@
   </div>
 </section>
 
-<section class="cta">
-  <div class="container fade">
-    <h2>Start on your own machine.</h2>
-    <p>The Windows installer includes the Hydron desktop app, CLI, .NET runtime, and local model engine.</p>
-    <div class="actions center"><a class="btn btn-primary" href="downloads/Hydron-Setup.exe">Download for Windows</a><a class="btn btn-secondary" href="install.html">Installation guide</a></div>
+<section class="download" id="download">
+  <div class="container">
+    <div class="download-panel fade">
+      <canvas class="ring" data-density=".7" aria-hidden="true"></canvas>
+      <h2 data-typed data-speed="55">Download Hydron</h2>
+      <p>v0.8.1 alpha · Windows 10 &amp; 11 (x64) · App, CLI, runtime, and local model engine in one installer.</p>
+      <div class="actions"><a class="btn btn-inverse" href="downloads/Hydron-Setup.exe">Download for Windows</a><a class="btn btn-ghost-inverse" href="install.html">Installation guide</a></div>
+    </div>
   </div>
 </section>
 </main>
@@ -122,17 +125,15 @@
 <footer class="footer">
   <div class="container">
     <div class="footer-top">
-      <div class="footer-brand">
-        <a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3.5"><ellipse cx="32" cy="32" rx="25" ry="8"/><ellipse cx="32" cy="32" rx="25" ry="8" transform="rotate(60 32 32)"/><ellipse cx="32" cy="32" rx="25" ry="8" transform="rotate(-60 32 32)"/></g><circle cx="32" cy="32" r="5" fill="currentColor"/></svg><span>Hydron</span></a>
-        <p>A local-first AI workspace for Windows. Your models, your agents, your machine.</p>
-      </div>
-      <nav class="footer-col" aria-label="Product"><h5>Product</h5><ul><li><a href="features.html">Features</a></li><li><a href="install.html">Install</a></li><li><a href="install.html#requirements">Requirements</a></li></ul></nav>
+      <p class="footer-title">Your models.<br><span class="soft">Your machine.</span></p>
+      <nav class="footer-col" aria-label="Product"><h5>Product</h5><ul><li><a href="downloads/Hydron-Setup.exe">Download</a></li><li><a href="features.html">Features</a></li><li><a href="install.html">Install</a></li><li><a href="install.html#requirements">Requirements</a></li></ul></nav>
       <nav class="footer-col" aria-label="Legal"><h5>Legal</h5><ul><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li><li><a href="terms.html#contact">Contact</a></li></ul></nav>
-      <nav class="footer-col" aria-label="Release"><h5>Release</h5><ul><li><a href="downloads/Hydron-Setup.exe">Windows download</a></li><li><span>macOS · planned</span></li><li><span>Linux · planned</span></li></ul></nav>
+      <nav class="footer-col" aria-label="Release"><h5>Release</h5><ul><li><a href="https://github.com/hydronai/hydron/releases">Releases</a></li><li><span>macOS · planned</span></li><li><span>Linux · planned</span></li></ul></nav>
     </div>
+    <div class="wordmark" aria-hidden="true"><span style="--i:0">H</span><span style="--i:1">y</span><span style="--i:2">d</span><span style="--i:3">r</span><span style="--i:4">o</span><span style="--i:5">n</span></div>
     <div class="footer-bottom"><span>© <span id="year">2026</span> Hydron</span><span>v0.8.1 alpha · Windows x64</span></div>
   </div>
 </footer>
-<script src="assets/site.js?v=6daf1478"></script>
+<script src="assets/site.js?v=18de6a3c"></script>
 </body>
 </html>
