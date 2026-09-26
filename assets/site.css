@@ -537,8 +537,6 @@ span.soft{ color:var(--ink-3); }
 .syn-hero h1{ font-size:clamp(2.6rem, 6vw, 5rem); letter-spacing:-.05em; line-height:1.02; }
 .syn-hero .lead{ margin:1.5rem 0 2rem; max-width:34rem; }
 .syn-meta{ margin-top:1rem; font-size:.88rem; color:var(--ink-3); }
-.pill-tag{ display:inline-flex; align-items:center; gap:.5rem; padding:.35rem .8rem; border-radius:var(--r-pill); background:var(--bg-muted); color:var(--ink-2); font-size:.85rem; margin-bottom:1.25rem; }
-.pill-tag::before{ content:""; width:7px; height:7px; border-radius:50%; background:#34c759; box-shadow:0 0 0 3px rgba(52,199,89,.18); }
 
 .phones{ position:relative; display:flex; justify-content:center; align-items:flex-end; gap:clamp(.75rem, 2vw, 1.5rem); min-height:clamp(420px, 48vw, 600px); }
 .phone{ width:clamp(170px, 19vw, 250px); aspect-ratio:923/2000; border-radius:clamp(26px, 3vw, 38px); padding:clamp(5px, .6vw, 8px); background:#17181c; box-shadow:0 0 0 1px rgba(255,255,255,.06) inset, 0 40px 80px -30px var(--shadow); flex:0 0 auto; }
