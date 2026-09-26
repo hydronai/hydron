@@ -180,7 +180,10 @@
       if(reducedMotion){ chars.forEach(function(c){ c.classList.add('on'); }); return; }
       var i = 0;
       (function step(){
-        if(i >= chars.length) return;
+        if(i >= chars.length){
+          if(!el.hasAttribute('data-caret-keep')) setTimeout(function(){ if(caret.parentNode) caret.parentNode.removeChild(caret); }, 1200);
+          return;
+        }
         var ch = chars[i++];
         ch.classList.add('on');
         ch.parentNode.insertBefore(caret, ch.nextSibling);
@@ -289,6 +292,13 @@
       exShots.forEach(function(im, i){ im.classList.toggle('active', i === idx); });
     };
     setActive(0);
+    exItems.forEach(function(it, i){
+      it.addEventListener('click', function(e){
+        if(e.target.closest('a')) return;
+        setActive(i);
+        it.scrollIntoView({ behavior:reducedMotion ? 'auto' : 'smooth', block:'center' });
+      });
+    });
     if('IntersectionObserver' in window){
       var exIo = new IntersectionObserver(function(entries){
         entries.forEach(function(en){ if(en.isIntersecting) setActive(Array.prototype.indexOf.call(exItems, en.target)); });
@@ -296,26 +306,6 @@
       exItems.forEach(function(it){ exIo.observe(it); });
     }
   }
-
-  /* Use-case slider arrows. */
-  document.querySelectorAll('[data-slider-wrap]').forEach(function(wrap){
-    var track = wrap.querySelector('.slider');
-    var prev = wrap.querySelector('[data-prev]'), next = wrap.querySelector('[data-next]');
-    var stepBy = function(dir){
-      var card = track.querySelector('.case');
-      var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
-      track.scrollBy({ left:dir * (card ? card.offsetWidth + gap : track.clientWidth * .8), behavior:reducedMotion ? 'auto' : 'smooth' });
-    };
-    var sync = function(){
-      prev.disabled = track.scrollLeft < 4;
-      next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
-    };
-    prev.addEventListener('click', function(){ stepBy(-1); });
-    next.addEventListener('click', function(){ stepBy(1); });
-    track.addEventListener('scroll', sync, { passive:true });
-    window.addEventListener('resize', sync);
-    sync();
-  });
 
   /* Appearance preview (features page). */
   var frame = document.getElementById('appearance-frame');
