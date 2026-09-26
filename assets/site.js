@@ -52,7 +52,7 @@
       if(el.classList.contains('fade')) el.style.setProperty('--d', (i * 0.08) + 's');
     });
   });
-  var items = document.querySelectorAll('.fade, .wordmark');
+  var items = document.querySelectorAll('.fade');
   if(reducedMotion || !('IntersectionObserver' in window)){
     items.forEach(function(el){ el.classList.add('in'); });
   } else {
