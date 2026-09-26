@@ -168,7 +168,7 @@ code{ font-family:var(--font-mono); font-size:.88em; background:var(--bg-muted);
 /* ---------- Product showcase ---------- */
 .showcase{ padding-bottom:clamp(3rem, 6vw, 5rem); }
 .frame{ background:var(--dark); border:1px solid var(--frame-edge); border-radius:var(--r-lg); padding:clamp(6px, 1vw, 10px); box-shadow:0 1px 2px rgba(0,0,0,.06), 0 30px 80px -30px var(--shadow); }
-.frame img{ width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; border-radius:calc(var(--r-lg) - 8px); transition:opacity .2s ease; }
+.frame img{ width:100%; height:auto; aspect-ratio:16/9; object-fit:contain; background:var(--dark); border-radius:calc(var(--r-lg) - 8px); transition:opacity .2s ease; }
 .frame.natural img{ aspect-ratio:auto; object-fit:contain; }
 .tabs{ display:inline-flex; gap:.25rem; padding:.3rem; margin-top:1.5rem; background:var(--bg-muted); border-radius:var(--r-pill); max-width:100%; overflow-x:auto; }
 .tab{ border:0; background:transparent; color:var(--ink-2); padding:.55rem 1.1rem; border-radius:var(--r-pill); font-size:.88rem; font-weight:500; white-space:nowrap; transition:background .15s, color .15s; }
