@@ -50,12 +50,14 @@
 
 <section class="showcase">
   <div class="container fade">
-    <div class="frame"><img id="product-shot" src="assets/hydron-chat.png" alt="Hydron chat interface" width="1280" height="720"></div>
+    <div class="frame"><img id="product-shot" src="assets/hydron-chat.png" alt="Hydron chat interface" width="1279" height="673"></div>
     <div style="text-align:center">
       <div class="tabs" role="tablist" aria-label="Hydron product views">
         <button class="tab active" role="tab" aria-selected="true" data-shot="assets/hydron-chat.png" data-alt="Hydron chat interface" data-caption="Chat with a local model or a connected coding agent.">Chat</button>
-        <button class="tab" role="tab" aria-selected="false" data-shot="assets/hydron-launch.png" data-alt="Hydron agents and local models screen" data-caption="Install models and launch the agents already on your PC.">Agents &amp; models</button>
-        <button class="tab" role="tab" aria-selected="false" data-shot="assets/hydron-ide.png" data-alt="Hydron integrated development environment" data-caption="Open a folder, edit files, and run your project.">IDE</button>
+        <button class="tab" role="tab" aria-selected="false" data-shot="assets/hydron-launch.png" data-alt="Hydron agents and local models screen" data-caption="Launch the agents already on your PC and manage installed models.">Agents &amp; models</button>
+        <button class="tab" role="tab" aria-selected="false" data-shot="assets/hydron-models.png" data-alt="Hydron Model Shop" data-caption="Install any GGUF model from Hugging Face, the Ollama library or a direct link.">Model Shop</button>
+        <button class="tab" role="tab" aria-selected="false" data-shot="assets/hydron-skills.png" data-alt="Hydron Skills library" data-caption="Install skills that change how the model writes, thinks and codes.">Skills</button>
+        <button class="tab" role="tab" aria-selected="false" data-shot="assets/hydron-ide.png" data-alt="Hydron integrated development environment" data-caption="Edit your project with Ion in the Ask Hydron side chat.">IDE</button>
       </div>
       <p class="tab-caption" id="product-caption">Chat with a local model or a connected coding agent.</p>
     </div>
@@ -68,24 +70,42 @@
     <div class="grid grid-3">
       <article class="card fade"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9z"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg></div><h3>Run models on your PC</h3><p>Download and use supported models locally. No cloud subscription is needed for local conversations.</p></article>
       <article class="card fade"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M4 6.5A1.5 1.5 0 0 1 5.5 5h4l1.5 2h7.5A1.5 1.5 0 0 1 20 8.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 17.5z"/></svg></div><h3>Open your own folder</h3><p>Choose a project folder, search its files, edit code, and see live output beside your work.</p></article>
-      <article class="card fade"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m8 7-5 5 5 5M16 7l5 5-5 5"/></svg></div><h3>Helpful code editing</h3><p>Syntax highlighting, automatic indentation, suggestions, and file search for common languages.</p></article>
+      <article class="card fade"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg></div><h3>Model Shop</h3><p>Install any GGUF model from Hugging Face, the Ollama library or a direct link, verified against its published SHA-256.</p></article>
       <article class="card fade"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 4 4-4 4"/><path d="M12 16h7"/></svg></div><h3>Your coding agents</h3><p>Hydron finds supported agents installed on your PC and gives you one place to open and use them.</p></article>
-      <article class="card fade"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3M13 15h4"/></svg></div><h3>Simple commands</h3><p>Install, run, list, and remove models from the Hydron app or your terminal.</p></article>
+      <article class="card fade"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></svg></div><h3>62 skills</h3><p>Install skills that change how the model writes, thinks and codes — concise, tutor, reviewer and more, with new ones on the way.</p></article>
       <article class="card fade"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M5 5h14a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-8l-4 3v-3H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/></svg></div><h3>Chats that stay saved</h3><p>Conversations stay on your computer and remember which model or agent you selected.</p></article>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="model-shop">
   <div class="container">
+    <div class="feature-row fade">
+      <div class="feature-copy">
+        <span class="eyebrow">Model Shop</span>
+        <h3>Any model from Hugging Face, one click away.</h3>
+        <p>Search Hugging Face straight from Hydron, or open an Ollama name, an <code>hf:owner/repo</code> reference or a direct <code>.gguf</code> link. Not sure where to start? Hydron's verified picks cover everything from tiny to capable.</p>
+        <ul class="checklist"><li>Install any GGUF model from Hugging Face, the Ollama library or a link</li><li>Downloads are checked against the SHA-256 the source publishes</li><li>Browse the most-downloaded GGUF models on Hugging Face</li><li>Verified picks such as Qwen, Llama, Gemma, Phi, Mistral and DeepSeek</li></ul>
+      </div>
+      <div class="frame"><img src="assets/hydron-models.png" alt="Hydron Model Shop with Hugging Face search and verified model picks" width="1279" height="670" loading="lazy"></div>
+    </div>
+    <div class="feature-row flip fade" id="skills">
+      <div class="feature-copy">
+        <span class="eyebrow">Skills</span>
+        <h3>Teach the model how you like to work.</h3>
+        <p>Skills change how the model writes, thinks and codes. There are 62 to choose from today, with more to come — from Concise and Plain English to Copy editor, Tutor and Reviewer.</p>
+        <ul class="checklist"><li>Install only the skills you want</li><li>Switch each installed skill on or off</li><li>Applies to the main chat, the side chat and the CLI</li><li>Search and filter by category</li></ul>
+      </div>
+      <div class="frame"><img src="assets/hydron-skills.png" alt="Hydron Skills library with installable writing and tone skills" width="1279" height="670" loading="lazy"></div>
+    </div>
     <div class="feature-row fade">
       <div class="feature-copy">
         <span class="eyebrow">Integrated IDE</span>
         <h3>Edit code and see the result.</h3>
         <p>Open the folder you choose and work beside the AI tools using it. Hydron calls the language toolchains already installed on your PC.</p>
-        <ul class="checklist"><li>Switch between the Hydron editor and VS Code</li><li>Ask an agent about the open file with Ctrl+I</li><li>Command palette, file explorer, and workspace search</li><li>Built-in terminal, problems, and output panels</li><li>Run with F5, plus Build and auto-save</li></ul>
+        <ul class="checklist"><li>Switch between the Hydron editor and VS Code</li><li>Ctrl+I opens Ask Hydron: Ion explains code, finds bugs and adds tests</li><li>You stay in control of every edit</li><li>Command palette, file explorer, and workspace search</li><li>Built-in terminal, problems, and output panels</li><li>Run with F5, plus Build and auto-save</li></ul>
       </div>
-      <div class="frame"><img src="assets/hydron-ide.png" alt="Hydron integrated development environment" width="1280" height="720" loading="lazy"></div>
+      <div class="frame"><img src="assets/hydron-ide.png" alt="Hydron integrated development environment" width="1279" height="669" loading="lazy"></div>
     </div>
     <div class="feature-row flip fade">
       <div class="feature-copy">
@@ -94,16 +114,16 @@
         <p>Hydron detects supported coding agents installed on your PC, including Codex, Claude Code, Hermes, OpenClaw, OpenCode, and Copilot CLI.</p>
         <ul class="checklist"><li>Use your own subscriptions or API access</li><li>Each provider keeps its own terms and privacy rules</li><li>Workspace and write access stay explicit</li></ul>
       </div>
-      <div class="frame"><img src="assets/hydron-launch.png" alt="Hydron agents and local models screen" width="1280" height="720" loading="lazy"></div>
+      <div class="frame"><img src="assets/hydron-launch.png" alt="Hydron agents and local models screen" width="1279" height="673" loading="lazy"></div>
     </div>
     <div class="feature-row fade">
       <div class="feature-copy">
         <span class="eyebrow">Terminal agent</span>
         <h3>A coding agent in your terminal.</h3>
-        <p>Type <code>hydron</code> in any shell to start a coding agent that runs on a local model — greeted by Ion, Hydron's pixel-atom mascot. Ask for a change and the agent reads, edits, and runs tests, then shows you what changed.</p>
-        <ul class="checklist"><li>Starts read-only; press Shift+Tab to change mode</li><li><code>/undo</code> reverts, Esc interrupts</li><li><code>/init</code> creates a HYDRON.md memory file for your project</li></ul>
+        <p>Type <code>hydron</code> in any shell and tell it what to work on. It runs on a local model or an agent such as OpenCode, and asks for a change the way you'd ask a teammate.</p>
+        <ul class="checklist"><li>Shift+Tab switches mode; Ctrl+L clears</li><li><code>@</code> attaches a file (Tab completes the path), <code>!</code> runs a shell command</li><li>Type <code>/</code> to see every command</li></ul>
       </div>
-      <div class="frame natural"><img src="assets/hydron-cli.png" alt="Hydron command-line agent welcome screen" width="1870" height="832" loading="lazy"></div>
+      <div class="frame natural"><img src="assets/hydron-cli.png" alt="Hydron CLI start screen with the pixel Ion logo and a prompt asking what to work on" width="1279" height="609" loading="lazy"></div>
     </div>
   </div>
 </section>
